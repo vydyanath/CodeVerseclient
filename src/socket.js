@@ -7,6 +7,6 @@ export const initSocket =  () => {
         timeout : 1000,
         transports : ['websocket'],
     }
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || "https://verseapi-203l.onrender.com";
     return io(backendUrl,options);
 }
