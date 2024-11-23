@@ -8,5 +8,5 @@ export const initSocket =  () => {
         transports : ['websocket'],
     }
     const backendUrl = process.env.REACT_APP_BACKEND_URL || "https://verseapi-203l.onrender.com";
-    return io(backendUrl,options);
+    return io("wss://verseapi-203l.onrender.com",options);
 }
