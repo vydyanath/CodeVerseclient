@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Client from "../components/Client";
 import MyEditor from "../components/MyEditor";
+import MyConsole from "../components/MyConsole";
 import { initSocket } from "../socket";
 import ACTIONS from "../Actions";
 import {
@@ -10,6 +11,7 @@ import {
     useParams,
 } from 'react-router-dom';
 import toast from "react-hot-toast";
+import MyCompiler from "../components/MyCompiler";
 
 const EditorPage = () => {
 
@@ -99,11 +101,18 @@ const EditorPage = () => {
                 <button className="btn copyBtn" onClick={copyRoomId}>COPY ROOM ID</button>
                 <button className="btn leaveBtn" onClick={leaveRoom}>Leave</button>
             </div>
-            <div className="editorWrap">
-                <MyEditor 
+            <div className="editorWrap" style={{ display: 'flex', flexDirection: 'row', height: '100vh', backgroundColor: 'black', padding: '20px' }}>
+                {/* <MyEditor 
                     socketRef = {socketRef} 
                     roomId = {roomId} 
-                    onCodeChange = {(code) => {codeRef.current = code}}/>
+                    onCodeChange = {(code) => {codeRef.current = code}}/> */}
+                    <div style={{ marginRight: '20px', flex: 1, marginTop: '10px', marginBottom: '10px' }}>
+                         <MyCompiler 
+                            socketRef = {socketRef}
+                            roomId = {roomId}
+                         />
+                    </div>
+                    
             </div>
         </div>
     );
