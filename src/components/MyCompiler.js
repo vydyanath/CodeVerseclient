@@ -8,7 +8,7 @@ import executeCode from '../execute';
 import { LANGUAGE_VERSIONS } from '../languageversions';
 
 const MyCompiler = ({ socketRef, roomId }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(CODE_SNIPPETS['javascript']);
   const [language, setLanguage] = useState('javascript');
   const editorRef = useRef();
   const [output,setOutput] = useState('');
